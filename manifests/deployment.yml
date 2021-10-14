@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: raymananhyperlegerfabric 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: raymananhyperlegerfabric
+  template:
+    metadata:
+      labels:
+        app: raymananhyperlegerfabric 
+    spec:
+      containers:
+        - name: raymananhyperlegerfabric 
+          image: cecs443hf.azurecr.io/raymananhyperlegerfabric
+          ports:
+          - containerPort: 9999
